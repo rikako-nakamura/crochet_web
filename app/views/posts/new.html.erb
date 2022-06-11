@@ -1,0 +1,32 @@
+<div>
+  <h1 class="text-center text-green-500 text-6xl mt-40 mb-20"><%= t('.title') %></h1>
+</div>
+
+<div class="container flex w-64 flex-wrap justify-center mx-auto">
+    <%= form_with model: @post, local: true do |f|%>
+      <select name="category" class="flex justify-center items-center">
+        <option value="what">カテゴリ選択</option>
+        <option value="bag">バック</option>
+        <option value="coaster">コースター</option>
+        <option value="motif">モチーフ</option>
+        <option value="GrannySquare">グラニースクエア</option>
+        <option value="flower">お花</option>
+      </select>
+
+      <select name="mood" class="flex justify-center items-center">
+        <option value="what">イメージ選択</option>
+        <option value="cute">かわいい</option>
+        <option value="cool">かっこいい</option>
+        <option value="unity">統一感</option>
+        <option value="retro">レトロ</option>
+      </select>
+
+      <form-group>
+        <label class="flex justify-center items-center">一言(任意)</label>
+      </form-group>
+
+        <textarea class="flex justify-center items-center"></textarea>
+
+        <button class="flex justify-center items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">投稿する</button>
+    <%end%>
+</div>
