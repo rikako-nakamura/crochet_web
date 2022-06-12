@@ -20,6 +20,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:body)
+    params.permit(:body, :category_id, :mood_id)
   end
 end
