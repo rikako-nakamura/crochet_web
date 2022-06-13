@@ -3,7 +3,7 @@
 </div>
 
 <div class="container flex w-64 flex-wrap justify-center mx-auto">
-    <%= form_with model: @post, local: true do |f|%>
+    <%= form_with model: @post, local: true do |f| %>
       <select name="category" class="flex justify-center items-center">
         <option value="what">カテゴリ選択</option>
         <option value="bag">バック</option>
@@ -21,12 +21,23 @@
         <option value="retro">レトロ</option>
       </select>
 
-      <form-group>
-        <label class="flex justify-center items-center">一言(任意)</label>
-      </form-group>
+      <div class="form-group">
+        <%= f.label :post_image, t('.post_image') %>
+        <%= f.file_field :post_image, onchange: 'previewImage()', accept: 'image/*' %>
+        <%= f.hidden_field :post_image_cache %>
+      </div>
 
-        <textarea class="flex justify-center items-center"></textarea>
+      <div class= "field">
+        作品にかかった時間はどのくらいですか？
+        <input type="text" name="finished_at" placeholder="(例)およそ1日">
+      </div>
 
-        <button class="flex justify-center items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">投稿する</button>
+      <div class= "field">
+        <label class="flex">一言(任意)</label>
+      </div>
+
+      <textarea class="flex justify-center items-center"></textarea>
+
+      <button class="flex justify-center items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">投稿する</button>
     <%end%>
 </div>
