@@ -1,0 +1,49 @@
+<div>
+  <h1 class="text-center text-green-500 text-6xl mt-40 mb-20"><%= t('.title') %></h1>
+</div>
+
+<div class="container flex w-64 flex-wrap justify-center mx-auto">
+    <%= form_with model: @post, local: true do |f| %>
+      <select name="category" class="flex justify-center items-center">
+        <option value="what">カテゴリ選択</option>
+        <option value="bag">バック</option>
+        <option value="coaster">コースター</option>
+        <option value="motif">モチーフ</option>
+        <option value="GrannySquare">グラニースクエア</option>
+        <option value="flower">お花</option>
+      </select>
+
+      <select name="mood" class="flex justify-center items-center">
+        <option value="what">イメージ選択</option>
+        <option value="cute">かわいい</option>
+        <option value="cool">かっこいい</option>
+        <option value="unity">統一感</option>
+        <option value="retro">レトロ</option>
+      </select>
+
+      <div class="form-group">
+        <%= f.label :post_image, t('.post_image') %>
+        <%= f.file_field :post_image, class: 'form-control mb-3', accept: 'image/*' %>
+        <%= f.hidden_field :post_image_cache %>
+      </div>
+      
+      <div class='mt-3 mb-3'>
+        <%= image_tag @post.post_image.url,
+                      id: 'preview',
+                      size: '300x200' %>
+      </div>
+
+      <div class= "field">
+        作品にかかった時間はどのくらいですか？
+        <input type="text" name="finished_at" placeholder="(例)およそ1日">
+      </div>
+
+      <div class= "field">
+        <label class="flex">一言(任意)</label>
+      </div>
+
+      <textarea class="flex justify-center items-center"></textarea>
+
+      <button class="flex justify-center items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">投稿する</button>
+    <%end%>
+</div>
