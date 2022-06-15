@@ -1,0 +1,33 @@
+<div>
+  <h1 class="text-center text-green-500 text-6xl mt-40 mb-20"><%= t('.title') %></h1>
+</div>
+
+<div class="container flex w-64 flex-wrap justify-center mx-auto">
+
+  <%= form_with model: @user, local: true do |form| %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :password %><br />
+      <%= form.password_field :password %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password_confirmation %><br />
+      <%= form.password_field :password_confirmation %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
