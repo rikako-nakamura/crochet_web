@@ -4,20 +4,48 @@
   </h1>
 
   <div class="buttons flex w-3/4 flex-wrap gap-2 justify-center mx-auto">
-    <button class="flex bg-blue-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded w-2/6 h-16 justify-center items-center">
-      はっきりした色がいい！
-    </button>
-
-    <button class="flex bg-pink-500 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded w-2/6 h-16 justify-center items-center">
-      ふんわりした色がいい！
-    </button>
-
     <button class="flex bg-pink-300 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded w-2/6 h-16 justify-center items-center">
       色を塗ってみる
     </button>
 
     <button class="flex bg-red-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded w-2/6 h-16 justify-center items-center">
-      投稿一覧へ
+      <%= link_to ("/posts") do %>
+        投稿一覧へ
+      <% end %>
     </button>
   </div>
 </div>
+
+<p id="tabcontrol">
+  <a href="#tabpage1">かっこいい</a>
+  <a href="#tabpage2">レトロ</a>
+  <a href="#tabpage3">かわいい</a>
+  <a href="#tabpage4">統一感</a>
+
+</p>
+<div id="tabbody">
+  <div id="tabpage1">
+    <%= image_tag "かっこいい1.png" %>
+    <%= image_tag "かっこいい2.png" %>
+    <%= image_tag "かっこいい3.png" %>
+  </div>
+
+  <div id="tabpage2">
+      <%= image_tag "レトロ1.png" %>
+      <%= image_tag "レトロ2.png" %>
+      <%= image_tag "レトロ3.png" %>
+  </div>
+
+  <div id="tabpage3">
+    <%= image_tag "かわいい1.png" %>
+    <%= image_tag "かわいい2.png" %>
+    <%= image_tag "かわいい3.png" %>
+  </div>
+
+  <div id="tabpage4">      
+    <%= image_tag "統一感1.png" %>
+    <%= image_tag "統一感2.png" %>
+    <%= image_tag "統一感3.png" %>
+  </div>
+</div>
+<%= javascript_pack_tag 'top/index' %>

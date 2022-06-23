@@ -1,4 +1,7 @@
 module.exports = {
+  resolve: {
+    modules: ['node_modules'],
+  },
   plugins: [
     require('tailwindcss'),
     require('postcss-import'),
