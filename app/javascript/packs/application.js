@@ -8,7 +8,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "stylesheets/application.css"
 import "../css/tailwindcss.css"
-
+import jquery from "jquery"
+window.$ = window.jQuery = jquery
 
 Rails.start()
 ActiveStorage.start()
