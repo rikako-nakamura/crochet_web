@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   delete '/logout', to: 'user_sessions#destroy'
 
   root 'top#index'
-  resources :posts
-  resources :users, only: %i[new create]
-
+  resources :posts do
+    collection do
+      get :favorites
+    end
+  end
+  resources :users, only: %i[new create show]
+  resources :favorites, only: %i[create destroy]
 end
