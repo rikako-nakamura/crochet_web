@@ -10,6 +10,7 @@ import "stylesheets/application.css"
 import "../css/tailwindcss.css"
 import jquery from "jquery"
 window.$ = window.jQuery = jquery
+import 'material-design-inspired-color-picker'
 
 Rails.start()
 ActiveStorage.start()
