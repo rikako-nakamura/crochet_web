@@ -10,6 +10,7 @@
     "@rails/webpacker": "5.4.3",
     "autoprefixer": "10",
     "jquery": "^3.6.0",
+    "material-design-inspired-color-picker": "^1.7.2",
     "postcss": "8",
     "postcss-loader": "4",
     "swiper": "^8.2.4",

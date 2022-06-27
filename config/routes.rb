@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/login', to: 'user_sessions#create'
   delete '/logout', to: 'user_sessions#destroy'
 
+  get '/draw', to: 'top#show'
   root 'top#index'
   resources :posts do
     collection do
