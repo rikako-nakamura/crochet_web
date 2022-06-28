@@ -18,36 +18,113 @@
   </div>
 </div>
 
-<p id="tabcontrol">
-  <a href="#tabpage1">かっこいい</a>
-  <a href="#tabpage2">レトロ</a>
-  <a href="#tabpage3">かわいい</a>
-  <a href="#tabpage4">統一感</a>
+<div class="flex flex-wrap mt-7" id="tabs-id">
+  <div class="w-full">
+    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600" onclick="changeAtiveTab(event,'tab-cools')">
+          かっこいい
+        </a>
+      </li>
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-retros')">
+          レトロ
+        </a>
+      </li>
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-cuties')">
+          かわいい
+        </a>
+      </li>
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-unities')">
+          統一感
+        </a>
+      </li>
 
-</p>
-<div id="tabbody">
-  <div id="tabpage1">
-    <%= image_tag "かっこいい1.png" %>
-    <%= image_tag "かっこいい2.png" %>
-    <%= image_tag "かっこいい3.png" %>
-  </div>
+    </ul>
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+      <div class="px-4 py-5 flex-auto">
+        <div class="tab-content tab-space">
 
-  <div id="tabpage2">
-      <%= image_tag "レトロ1.png" %>
-      <%= image_tag "レトロ2.png" %>
-      <%= image_tag "レトロ3.png" %>
-  </div>
+          <div class="block" id="tab-cools">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><%= image_tag "かっこいい1.png" %></div>
+                <div class="swiper-slide"><%= image_tag "かっこいい2.png" %></div>
+                <div class="swiper-slide"><%= image_tag "かっこいい3.png" %></div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
 
-  <div id="tabpage3">
-    <%= image_tag "かわいい1.png" %>
-    <%= image_tag "かわいい2.png" %>
-    <%= image_tag "かわいい3.png" %>
-  </div>
+          <div class="hidden" id="tab-retros">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><%= image_tag "レトロ1.png" %></div>
+                <div class="swiper-slide"><%= image_tag "レトロ2.png" %></div>
+                <div class="swiper-slide"><%= image_tag "レトロ3.png" %></div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
 
-  <div id="tabpage4">      
-    <%= image_tag "統一感1.png" %>
-    <%= image_tag "統一感2.png" %>
-    <%= image_tag "統一感3.png" %>
+          </div>
+          <div class="hidden" id="tab-cuties">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><%= image_tag "かわいい1.png" %></div>
+                <div class="swiper-slide"><%= image_tag "かわいい2.png" %></div>
+                <div class="swiper-slide"><%= image_tag "かわいい3.png" %></div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="hidden" id="tab-unities">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><%= image_tag "統一感1.png" %></div>
+                <div class="swiper-slide"><%= image_tag "統一感2.png" %></div>
+                <div class="swiper-slide"><%= image_tag "統一感3.png" %></div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<script>
+  function changeAtiveTab(event,tabID){
+    let element = event.target;
+    while(element.nodeName !== "A"){
+      element = element.parentNode;
+    }
+    ulElement = element.parentNode.parentNode;
+    aElements = ulElement.querySelectorAll("li > a");
+    tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+    for(let i = 0 ; i < aElements.length; i++){
+      aElements[i].classList.remove("text-white");
+      aElements[i].classList.remove("bg-pink-600");
+      aElements[i].classList.add("text-pink-600");
+      aElements[i].classList.add("bg-white");
+      tabContents[i].classList.add("hidden");
+      tabContents[i].classList.remove("block");
+    }
+    element.classList.remove("text-pink-600");
+    element.classList.remove("bg-white");
+    element.classList.add("text-white");
+    element.classList.add("bg-pink-600");
+    document.getElementById(tabID).classList.remove("hidden");
+    document.getElementById(tabID).classList.add("block");
+  }
+</script>
 <%= javascript_pack_tag 'top/index' %>

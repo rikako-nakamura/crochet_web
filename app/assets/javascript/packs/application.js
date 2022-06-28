@@ -16,4 +16,5 @@ require('jquery')
 // ...
 //= require rails-ujs
 //= require turbolinks
-//= require swiper/swiper-bundle
+//= require swiper/swiper-bundle.js
+//= require swiper.js
