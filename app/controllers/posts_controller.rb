@@ -26,9 +26,10 @@ class PostsController < ApplicationController
   def favorites
     @favorite_posts = current_user.favorite_posts.includes(:user).order(created_at: :desc)
   end
+
   private
 
   def post_params
-    params.require(:post).permit(:body, :category_id, :mood_id, :post_image, :post_image_cache, :finished_at)
+    params.require(:post).permit(:body, :category_id, :mood_id, :post_image, :post_image_cache, :finished_at).merge(user_id: current_user.id)
   end
 end

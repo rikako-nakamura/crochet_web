@@ -2,9 +2,19 @@
   <h1 class="text-center text-green-500 text-6xl mt-40 mb-20"><%= "#{@user.name}さん、何を作りますか？" %></h1>
 </div>
 
-<div class="w-3/4	h-3/5	  
-  background: #FFF6A5; bg-amber-200">
-  <h1 class= "text-red-400 text-6xl">投稿作品orメモ</h1>
+<div class="justify-center mx-auto w-3/4	h-96	bg-yellow-200">
+  <div class="col-sm-12 col-lg-4 mb-3 ">
+    <% if @posts.present? %>
+      <div class= "flex">
+        <% @posts.each do |post| %>
+          <%= image_tag post.post_image_url, size: '300x200'%>
+        <% end %>
+      </div>
+    <% else %>
+      <p><%= "投稿していません" %></p>
+    <% end %>
+  </div>
+<%= paginate @posts %>
 </div>
 
 <div class= "flex">

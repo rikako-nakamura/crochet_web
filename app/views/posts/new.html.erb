@@ -4,22 +4,15 @@
 
 <div class="container flex w-64 flex-wrap justify-center mx-auto">
     <%= form_with model: @post, local: true do |f| %>
-      <select name="category" class="flex justify-center items-center">
-        <option value="what">カテゴリ選択</option>
-        <option value="bag">バック</option>
-        <option value="coaster">コースター</option>
-        <option value="motif">モチーフ</option>
-        <option value="GrannySquare">グラニースクエア</option>
-        <option value="flower">お花</option>
-      </select>
+      <div class="form-group">
+        <%= f.label :category_id, 'カテゴリ' %>
+        <%= f.select :category_id, {'バック': 1, 'コースター': 2, 'モチーフ': 3, 'グラニースクエア': 3, 'お花': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      </div>
 
-      <select name="mood" class="flex justify-center items-center">
-        <option value="what">イメージ選択</option>
-        <option value="cute">かわいい</option>
-        <option value="cool">かっこいい</option>
-        <option value="unity">統一感</option>
-        <option value="retro">レトロ</option>
-      </select>
+      <div class="form-group">
+        <%= f.label :mood_id, 'イメージ' %>
+        <%= f.select :mood_id, {'かわいい': 1, 'かっこいい': 2, '統一感': 3, 'レトロ': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      </div>
 
       <div class="form-group">
         <%= f.label :post_image, t('.post_image') %>
@@ -31,18 +24,18 @@
                   id: 'preview',
                   size: '300x200' %>
       </div>
-
-      <div class= "field">
-        作品にかかった時間はどのくらいですか？
-        <input type="text" name="finished_at" placeholder="(例)およそ1日">
+      <div class="form-group">
+        <%= f.label :finished_at, "作品にかかった時間はどのくらいですか？" %>
+        <%= f.text_field :finished_at, placeholder: "(例)およそ1日" %>
       </div>
 
-      <div class= "field">
-        <label class="flex">一言(任意)</label>
+      <div class="form-group">
+        <%= f.label :body, "ひとこと(任意)" %>
+        <%= f.text_area :body %>
       </div>
 
-      <textarea class="flex justify-center items-center"></textarea>
-
-      <button class="flex justify-center items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">投稿する</button>
+      <button class="flex justify-center items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">
+        <%= f.submit %>
+      </button>
     <%end%>
 </div>
