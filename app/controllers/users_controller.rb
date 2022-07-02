@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(4)
   end
 
   def new
