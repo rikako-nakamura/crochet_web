@@ -16,3 +16,7 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
+
+  knitting_diagrams:
+    new:
+      submit: 'マイページに保存する'

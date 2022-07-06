@@ -8,7 +8,6 @@ class UserSessionsController < ApplicationController
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
       redirect_to root_path
-      #redirect_to my_pageに飛ぶ
     else
       render :new
     end
