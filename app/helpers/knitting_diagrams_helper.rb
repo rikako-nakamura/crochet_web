@@ -1,0 +1,2 @@
+module KnittingDiagramsHelper
+end

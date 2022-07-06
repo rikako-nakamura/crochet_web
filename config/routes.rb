@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   post '/login', to: 'user_sessions#create'
   delete '/logout', to: 'user_sessions#destroy'
 
-  get '/draw', to: 'top#show'
+  get '/draw', to: 'knitting_diagrams#new'
+  post '/draw', to: 'knitting_diagrams#create'
+  get '/draws', to: 'knitting_diagrams#index'
   root 'top#index'
   resources :posts do
     collection do

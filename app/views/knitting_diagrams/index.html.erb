@@ -1,0 +1,17 @@
+<div class="justify-center mx-auto mt-6">
+  <div class="col-sm-12 col-lg-4 mb-3 ">
+    <% if @knitting_diagrams.present? %>
+      <div class= "flex ">
+        <% @knitting_diagrams.each do |knitting_diagram|%>
+          <div id="knitting_diagrams-id-<%= knitting_diagram.id%>" class="flex justify-around mx-8">
+            <div class= "square_outer1" style="background-color:<%= knitting_diagram.square_outer %>"></div>
+            <div class= "square_center2 m-12" style="background-color:<%= knitting_diagram.square_center %>"></div>
+            <div class= "square_inner3 m-24" style="background-color:<%= knitting_diagram.square_inner %>"></div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p><%= "保存していません" %></p>
+    <% end %>
+  </div>
+</div>

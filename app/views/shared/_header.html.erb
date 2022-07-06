@@ -14,9 +14,9 @@
         <div class= "block lg:inline-block lg:mt-0 text-green-900 hover:text-red-300 text-2xl mr-4">
           <%= link_to "お気に入り", favorites_posts_path %>
         </div>
-        <a href="#responsive-header" class="block lg:inline-block lg:mt-0 text-green-900 hover:text-red-300 text-2xl">
-          塗ったカラーイメージ
-        </a>
+        <div class="block lg:inline-block lg:mt-0 text-green-900 hover:text-red-300 text-2xl">
+          <%= link_to "塗ったカラーイメージ", draws_path %>
+        </div>
       </div>
       <div class= "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
         <%= link_to 'ログアウト', logout_path, method: :delete %>
