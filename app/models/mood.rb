@@ -1,6 +1,6 @@
 class Mood < ApplicationRecord
-  belongs_to :post
+  has_many :post
 
-  validates :neme, presence:true
+  validates :name, presence:true
 
 end
