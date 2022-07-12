@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get :favorites
     end
+    get 'search', on: :collection
   end
   resources :users, only: %i[new create show]
   resources :favorites, only: %i[create destroy]

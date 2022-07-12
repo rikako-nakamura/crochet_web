@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   has_many :moods, dependent: :destroy
   has_many :favorites
 
+  scope :by_category, ->(category_id) { where(category_id: category_id) }
+  scope :by_mood, ->(mood_id) { where(mood_id: mood_id) }
 end

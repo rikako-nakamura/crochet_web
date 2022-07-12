@@ -6,12 +6,12 @@
     <%= form_with model: @post, local: true do |f| %>
       <div class="form-group">
         <%= f.label :category_id, 'カテゴリ' %>
-        <%= f.select :category_id, {'バック': 1, 'コースター': 2, 'モチーフ': 3, 'グラニースクエア': 3, 'お花': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+        <%= f.select :category_id, {'バック': 1, 'コースター': 2, 'モチーフ': 3, 'グラニースクエア': 4, 'お花': 5}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
       </div>
 
       <div class="form-group">
         <%= f.label :mood_id, 'イメージ' %>
-        <%= f.select :mood_id, {'かわいい': 1, 'かっこいい': 2, '統一感': 3, 'レトロ': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+        <%= f.select :mood_id, {'かわいい': 1, 'かっこいい': 2, '統一感': 3, 'レトロ': 4}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
       </div>
 
       <div class="form-group">

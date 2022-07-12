@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @search_posts_form = SearchPostsForm.new(search_params)
+    @posts = @search_posts_form.search.order(id: :desc).page(params[:page]).per(25)
   end
 
   def show;end
@@ -29,7 +31,12 @@ class PostsController < ApplicationController
 
   private
 
+  def search_params
+    params[:q]&.permit(:category_id, :mood_id)
+  end
+
   def post_params
     params.require(:post).permit(:body, :category_id, :mood_id, :post_image, :post_image_cache, :finished_at).merge(user_id: current_user.id)
   end
+
 end
