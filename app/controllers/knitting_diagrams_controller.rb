@@ -2,7 +2,7 @@ class KnittingDiagramsController < ApplicationController
   before_action :login_required, only: %i[create index]
 
   def index
-    @knitting_diagrams = KnittingDiagram.all.where(user_id: current_user.id).includes(:user)
+    @knitting_diagrams = KnittingDiagram.all.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def new
@@ -18,6 +18,6 @@ class KnittingDiagramsController < ApplicationController
   private
 
   def knitting_diagram_params
-    params.permit(:square_outer, :square_center, :square_inner,:user_id)
+    params.permit(:square_outer, :square_center, :square_inner, :user_id, :user_name)
   end
 end
