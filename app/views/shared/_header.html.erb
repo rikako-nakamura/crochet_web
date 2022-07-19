@@ -1,25 +1,23 @@
-<header>
-  <nav class="flex items-center justify-between flex-wrap bg-green-200 p-6 h-18">
-    <div class="block mr-4">
+<header class=" header bg-green-200 text-gray-600 body-font ">
+  <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <nav class="flex lg:w-auto flex-wrap items-center text-base md:ml-auto font-body">
+      <div class="mr-5 hover:text-gray-900"><%= link_to "マイページ", user_path(current_user.id) %></div>
+      <div class="mr-5 hover:text-gray-900"><%= link_to "お気に入り", favorites_posts_path %></div>
+      <div class="mr-5 hover:text-gray-900"><%= link_to "塗ったカラーイメージ", draws_path %></div>
+    </nav>
+    <div class="flex order-first lg:order-none lg:w-1/5 title-font items-center lg:items-center lg:justify-center mb-4 md:mb-0 my-1">
       <%= link_to root_path do %>
-        <%= image_tag src='logo.png',width: "100",heght: "100"%>
+        <%= image_tag src='logo.png',width: "50",heght: "50"%>
       <%end%>
+      <p class="ml-3 text-xl text-green-900 font-medium font-body">FOR CROCHET</p>
     </div>
-
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto mb-8 mt-4">
-      <div class="text-sm lg:flex-grow">
-        <div class="block lg:inline-block lg:mt-0 text-green-900 hover:text-red-300 text-2xl mr-4">
-          <%= link_to "マイページ", user_path(current_user.id) %>
-        </div>
-        <div class= "block lg:inline-block lg:mt-0 text-green-900 hover:text-red-300 text-2xl mr-4">
-          <%= link_to "お気に入り", favorites_posts_path %>
-        </div>
-        <div class="block lg:inline-block lg:mt-0 text-green-900 hover:text-red-300 text-2xl">
-          <%= link_to "塗ったカラーイメージ", draws_path %>
-        </div>
-      </div>
-      <div class= "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      <button class="inline-flex items-center bg-green-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-300 rounded text-base mt-4 md:mt-0 font-body">
         <%= link_to 'ログアウト', logout_path, method: :delete %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg>
+      </button>
     </div>
-  </nav>
+  </div>
 </header>

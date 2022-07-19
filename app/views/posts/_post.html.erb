@@ -3,9 +3,17 @@
 		<div class="mt-6">
 			<div class="max-w-xl bg-white rounded-lg border border-green-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <%= image_tag post.post_image_url, class: 'card-img-top', size: '300x200' %>
-        <div class= "text-green-500" id="post-id-<%= post.id %>">
+        <div class= "text-green-500 flex" id="post-id-<%= post.id %>">
           <%= "#{post.user.name}さんの作品"%>
-          <%= render 'favorite_button', post: post %>
+					<% if current_user %>
+            <%= render 'favorite_button', post: post %>
+					<% else %>
+						<%= link_to login_path method: :post do %>
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						<%end%>
+					<%end%>
 				</div>
 			</div>
 		</div>
