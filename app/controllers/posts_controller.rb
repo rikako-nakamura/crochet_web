@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :login_required
+  before_action :login_required, only: %i[new create edit]
 
   def index
     @posts = Post.all
