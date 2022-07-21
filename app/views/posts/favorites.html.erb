@@ -7,15 +7,13 @@
   </div>
 
   <div>
-    <div class="col-12">
-      <div class="flex">
-        <% if @favorite_posts.present? %>
-          <%= render @favorite_posts %>
-        <% else %>
-          <div class= "font-body text-xl text-center"><%= t('.no_result') %><br><%= link_to "投稿一覧", "posts/index", class: "bg-yellow-100"%>でお気に入りの作品を見つけてみませんか🌷</div>
-        <% end %>
-      </div>
-      <%= paginate @favorite_posts %>
+    <div class="flex">
+      <% if @favorite_posts.present? %>
+        <%= render @favorite_posts %>
+      <% else %>
+        <div class= "font-body text-xl text-center"><%= t('.no_result') %><br><%= link_to "投稿一覧", "posts/index", class: "bg-yellow-100"%>でお気に入りの作品を見つけてみませんか🌷</div>
+      <% end %>
     </div>
+    <%= paginate @favorite_posts %>
   </div>
 </div>

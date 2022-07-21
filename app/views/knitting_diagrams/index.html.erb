@@ -6,21 +6,19 @@
     <%= image_tag "flower1.png"%>
   </div>
   <div class="flex flex-wrap">
-    <div class="">
-      <% if @knitting_diagrams.present? %>
-        <div class= "flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10">
-          <% @knitting_diagrams.each do |knitting_diagram|%>
-            <div id="knitting_diagrams-id-<%= knitting_diagram.id%>" class="flex justify-around mx-8">
-              <div class= "square_outer1" style="background-color:<%= knitting_diagram.square_outer %>"></div>
-              <div class= "square_center2 m-12" style="background-color:<%= knitting_diagram.square_center %>"></div>
-              <div class= "square_inner3 m-24" style="background-color:<%= knitting_diagram.square_inner %>"></div>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <p><%= "保存していません" %></p>
-      <% end %>
-    </div>
+    <% if @knitting_diagrams.present? %>
+      <div class= "flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10">
+        <% @knitting_diagrams.each do |knitting_diagram|%>
+          <div id="knitting_diagrams-id-<%= knitting_diagram.id%>" class="flex justify-around mx-8">
+            <div class= "square_outer1" style="background-color:<%= knitting_diagram.square_outer %>"></div>
+            <div class= "square_center2 m-12" style="background-color:<%= knitting_diagram.square_center %>"></div>
+            <div class= "square_inner3 m-24" style="background-color:<%= knitting_diagram.square_inner %>"></div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class= "font-body text-xl text-center mx-auto"><%= t('.no_result') %><br><%= link_to "こちら", "posts/index", class: "bg-yellow-100"%>で編み図に似せて色を塗って配色を考えてみませんか🌷</div>
+    <% end %>
     <%= paginate @knitting_diagrams %>
   </div>
 </div>
