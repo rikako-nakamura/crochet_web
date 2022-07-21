@@ -17,7 +17,7 @@
         <% end %>
       </div>
     <% else %>
-      <div class= "font-body text-xl text-center mx-auto"><%= t('.no_result') %><br><%= link_to "こちら", "posts/index", class: "bg-yellow-100"%>で編み図に似せて色を塗って配色を考えてみませんか🌷</div>
+      <div class= "font-body text-xl text-center mx-auto"><%= t('.no_result') %><br><%= link_to "こちら", draw_path, class: "bg-yellow-100"%>で編み図に似せて色を塗って配色を考えてみませんか🌷</div>
     <% end %>
     <%= paginate @knitting_diagrams %>
   </div>
