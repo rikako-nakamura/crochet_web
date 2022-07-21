@@ -21,3 +21,5 @@ ja:
   knitting_diagrams:
     new:
       submit: 'マイページに保存する'
+    index:
+      no_result: '保存していません。'
