@@ -1,11 +1,21 @@
-<div class="row">
-  <div class="col-12">
-    <div class="row">
-      <% if @favorite_posts.present? %>
-        <%= render @favorite_posts %>
-      <% else %>
-        <p><%= t('.no_result') %></p>
-      <% end %>
+<div class="container px-5 py-24 mx-auto">
+  <div class="flex flex-col text-center w-full mb-20 bg-yellow-100">
+    <%= image_tag "flower1.png"%>
+    <h1 class="text-3xl font-medium title-font mb-4 text-gray-900 font-body ">Favorite works</h1>
+    <p class="lg:w-2/3 mx-auto leading-relaxed text-base font-body text-lg">お気に入りのかぎ針で編んだ作品の一覧です。<br>自分の投稿と他の皆さんの作品をお気に入りしてアイデアを合わせるのもいいですね🌼</p>
+    <%= image_tag "flower1.png"%>
+  </div>
+
+  <div>
+    <div class="col-12">
+      <div class="flex">
+        <% if @favorite_posts.present? %>
+          <%= render @favorite_posts %>
+        <% else %>
+          <div class= "font-body text-xl text-center"><%= t('.no_result') %><br><%= link_to "投稿一覧", "posts/index", class: "bg-yellow-100"%>でお気に入りの作品を見つけてみませんか🌷</div>
+        <% end %>
+      </div>
+      <%= paginate @favorite_posts %>
     </div>
   </div>
 </div>
