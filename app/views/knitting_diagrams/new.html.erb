@@ -1,26 +1,36 @@
-<h1 class="text-center text-green-500 text-6xl mt-40 mb-20">編み図を図形に例えました。<br>さまざまな色をクリックでイメージできます。</h1>
-<md-color-picker id="colorPicker" color-margin="6" colors-per-row="5" color-size="40" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#2196f3"></md-color-picker>
+<div class="container px-5 py-24 mx-auto">
+  <div class="flex flex-col text-center w-full mb-20 bg-pink-100">
+    <%= image_tag "flower2.png"%>
+    <h1 class="text-3xl font-medium title-font mb-4 text-gray-900 font-body ">Let's drawing Knitting diagrams</h1>
+    <p class="lg:w-2/3 mx-auto leading-relaxed text-base font-body text-lg">編み図を図形に例えました。<br>さまざまな色をクリックでイメージできます。🌼</p>
+    <%= image_tag "flower2.png"%>
+  </div>
 
-<div class="relative justify-end flex">
+  <div class="relative justify-end flex mt-10">
+    <div class= "mt-20">
+      <%= form_with model: @knitting_diagram, local: true do |f| %>
 
-  <%= form_with model: @knitting_diagram, local: true do |f| %>
+        <div class="square_outer">
+          <%= f.color_field :square_outer, {class: 'square_outer'} %>
+        </div>
 
-    <div class="square_outer">
-      <%= f.color_field :square_outer, {class: 'square_outer'} %>
+        <div class="square_center">
+          <%= f.color_field :square_center, {class: 'square_center'} %>
+        </div>
+
+        <div class="square_inner">
+          <%= f.color_field :square_inner, {class: 'square_inner'} %>
+        </div>
+
+        <button type="submit">
+          <%= f.submit (t '.submit'), class: "shadow-lg bg-green-500 shadow-green-500/50 text-white rounded-full px-3 py-3" %>
+        </button>
+      <% end %>
+      <p class="text-green-500 text-3xl mt-20 mb-10 font-body">※保存する場合会員登録が必要です<p>
+      <button>
+        <%= link_to "会員登録はこちら >>", new_user_path, class: "shadow-xl rounded px-3 py-3 font-body text-green-500"%>
+      </button>
     </div>
-
-    <div class="square_center">
-      <%= f.color_field :square_center, {class: 'square_center'} %>
-    </div>
-
-    <div class="square_inner">
-      <%= f.color_field :square_inner, {class: 'square_inner'} %>
-    </div>
-
-    <button class="justify-end items-center bg-red-200 hover:bg-pink-500 text-green-500 py-2 px-4 bg-opacity: 1;" type="submit">
-      <%= f.submit (t '.submit') %>
-    </button>
-    <p class="text-green-500 text-3xl mt-20 mb-20">※保存する場合会員登録が必要です<p>
-  <% end %>
+  </div>
+  <%= javascript_pack_tag 'knitting_diagram/new' %>
 </div>
-<%= javascript_pack_tag 'knitting_diagram/new' %>
