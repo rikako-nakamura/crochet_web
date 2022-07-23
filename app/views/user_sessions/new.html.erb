@@ -23,6 +23,9 @@
 
         <button type="submit" class="w-full block bg-green-500 hover:bg-green-400 focus:bg-green-400 text-white font-semibold rounded-lg px-4 py-3 mt-6 font-body"><%= t('.title') %>する>></button>
       <% end %>
+        <div class="text-right mt-11 text-sm font-semibold text-gray-700 font-body">
+          <%= link_to "会員登録お済みでないようでしたらこちらから🌼", new_user_path, method: :get, class: 'hover:bg-green-300 py-3 px-3 rounded-full'%>
+        </div>
     </div>
   </div>
 
