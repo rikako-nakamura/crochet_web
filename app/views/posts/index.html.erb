@@ -1,20 +1,32 @@
 <div class="container px-5 py-24 mx-auto">
-  <div class= "justify-center">
-    <h1 class="text-center font-bold text-4xl m-8 text-green-500"><%= t('.title') %></h1>
+  <div class="flex flex-col w-full mb-15 bg-pink-100">
+    <%= image_tag "flower2.png"%>
+    <h1 class="text-3xl font-medium title-font mb-4 text-gray-900 font-body text-center"><%= t('.title') %></h1>
+    <section class="flex justify-center w-5/6 text-center mx-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="lg:w-2/3 leading-relaxed text-base font-body text-lg">
+        を押すとお気に入りができます。後で見返せることができ、編む時のヒントになるかもしれません。
+      </p>
+    </section>
+    <p class= "text-right font-body w-5/6 mx-auto">
+      ※お気に入りする場合ログインが必要です。
+    </p>
+    <%= image_tag "flower2.png"%>
   </div>
 
   <div class="container pt-3 ">
     <div class="col-lg-10 offset-lg-1 flex justify-end ">
       <%= form_with model: @search_posts_form, scope: :q, url: posts_path, method: :get do |f| %>
-
         <div class="inline-block relative w-44">
-          <div class="border border-gray-300 rounded-full text-gray-600 h-10 pt-2 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+          <div class="border border-gray-300 rounded-full text-gray-600 h-10 pt-2 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none font-body">
             <%= f.select :category_id, Category.pluck(:name, :id) , {include_blank: "カテゴリ"}%>
           </div>
         </div>
 
         <div class="inline-block relative w-32">
-          <div class="border border-gray-300 rounded-full text-gray-600 h-10 pt-2 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+          <div class="border border-gray-300 rounded-full text-gray-600 h-10 pt-2 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none font-body">
             <%= f.select :mood_id, Mood.pluck(:name, :id) , {include_blank: "イメージ"}%>
           </div>
         </div>
@@ -27,12 +39,16 @@
       <%end%>
     </div>
 
-    <div class= "flex justify-around flex-wrap">
+    <div class= "flex justify-center flex-wrap">
       <% if @posts.present? %>
         <%= render @posts %>
       <% else %>
-        <p><%= t('.no_result') %></p>
+        <div class="flex">
+          <%= image_tag "bulldog.jpeg"%>
+          <p class= "text-center text-green-500 font-body text-3xl my-auto leading-normal"><%= t('.no_result') %><br>かぎ針で編んで投稿してみませんか?</p>
+        </div>
       <% end %>
-    </div>
+    </div> 
+    <%= paginate @posts %>
   </div>
 </div>

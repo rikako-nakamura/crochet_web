@@ -19,7 +19,7 @@
     <% else %>
       <div class="justify-center mx-auto">
         <div class= "text-center text-green-500 font-body text-3xl mt-11 mx-auto leading-normal"><%= t('.no_result') %><br>編み図に似せて色を塗って配色を考えてみませんか🌷</div>
-        <button class=" text-green-500 font-body rounded px-4 py-2 mt-11 shadow-2xl mx-64 text-2xl"><%= link_to "塗りにいく>>", "knitting_diagrams/new" %></button>
+        <button class=" text-green-500 font-body rounded px-4 py-2 mt-11 shadow-2xl mx-64 text-2xl"><%= link_to "塗りにいく>>", draw_path %></button>
       </div>
     <% end %>
     <%= paginate @knitting_diagrams %>

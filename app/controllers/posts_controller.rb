@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @search_posts_form = SearchPostsForm.new(search_params)
-    @posts = @search_posts_form.search.order(id: :desc).page(params[:page]).per(25)
+    @posts = @search_posts_form.search.order(id: :desc).page(params[:page]).per(4)
   end
 
   def show;end
