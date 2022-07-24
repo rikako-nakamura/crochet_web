@@ -54,3 +54,5 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
+
+gem 'public_uid'
