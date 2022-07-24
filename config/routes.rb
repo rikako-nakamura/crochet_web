@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     end
     get 'search', on: :collection
   end
-  resources :users, only: %i[new create show]
+  resources :users, param: :public_uid, only: %i[new create show]
   resources :favorites, only: %i[create destroy]
 end

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    set_user
     @posts = Post.where(user_id: current_user.id).includes(:user).order("created_at DESC").page(params[:page]).per(4)
   end
 
@@ -27,8 +27,12 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find_by(public_uid: params[:id])
+  end
+
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :public_uid)
   end
 
 end
