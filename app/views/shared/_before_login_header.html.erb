@@ -1,10 +1,12 @@
-<header class=" header ">
+<header class="header">
   <nav class="border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 my-auto bg-green-200">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-      <%= link_to root_path do %>
-        <%= image_tag src='logo.png',width: "50",heght: "50"%>
-      <%end%>
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white font-body">FOR CROCHET</span>
+      <div class="flex items-center">
+        <%= link_to root_path do %>
+          <%= image_tag src='logo.png', class: 'mr-3 h-6 w-6 sm:h-9'%>
+        <%end%>
+        <span class="self-center text-xl text-green-900 font-semibold whitespace-nowrap dark:text-white font-body">FOR CROCHET</span>
+      </div>
       <div class="flex items-center lg:order-2">
         <button class="flex font-body text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
           <%= link_to "ログイン", login_path %>
