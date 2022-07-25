@@ -18,7 +18,7 @@
           </div>
           <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 my-auto font-body">
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <%= f.label :post_image, t('.post_image'), class: 'text-gray-900 text-xl mb-1' %>
+              <%= f.label :post_image, t('.post_image'), class: 'text-gray-600 h-10 pr-10 bg-white font-body' %>
               <%= f.file_field :post_image, onChange: "imgPreView(event)", class: 'text-sm text-gray-500'%>
               <div class="form-group inline-block mt-3">
                 <%= f.label :category_id, 'カテゴリ' %>

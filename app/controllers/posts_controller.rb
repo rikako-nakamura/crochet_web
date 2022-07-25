@@ -7,7 +7,9 @@ class PostsController < ApplicationController
     @posts = @search_posts_form.search.order(id: :desc).page(params[:page]).per(4)
   end
 
-  def show;end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def new
     @post = Post.new
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to posts_path, notice: "投稿しました！"
+      redirect_to posts_path
     else
       render :new
     end
