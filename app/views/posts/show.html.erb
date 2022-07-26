@@ -35,7 +35,7 @@
           </div>
 
           <div class="text-left md:w-full font-body h-48 text-base outline-none text-gray-700 py-1 mt-6 resize-none leading-6 transition-colors duration-200 ease-in-out">
-            <% if @post.present?%>
+            <% if @post.body.present?%>
               ひとこと：<br><%= @post.body %>
             <% else %>
               ひとことはありません
