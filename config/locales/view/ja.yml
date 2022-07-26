@@ -6,6 +6,9 @@ ja:
       search: '検索'
     new:
       post_image: '作品の画像'
+    edit:
+      post_image: '作品の画像'
+      submit: '更新する'
     favorites:
       no_result: 'お気に入りした作品がありません。'
 
