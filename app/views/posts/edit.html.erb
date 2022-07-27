@@ -1,4 +1,71 @@
-<div>
-  <h1 class="font-bold text-4xl">Posts#edit</h1>
-  <p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container px-5 py-24 mx-auto">
+  <div class="flex flex-col w-full mb-15 bg-pink-100">
+    <%= image_tag "flower2.png"%>
+    <h1 class="text-3xl font-medium title-font mb-4 text-gray-900 font-body text-center">Editing your post</h1>
+    <%= image_tag "flower2.png"%>
+  </div>
+
+  <section class="text-gray-600 body-font overflow-hidden">
+    <div class= "justify-center">
+      <%= form_with model: @post, url: post_path(@post), local: true do |f| %>
+        <div class="lg:w-full mx-auto flex flex-wrap">
+          <div class="form-group lg:w-1/2 w-full lg:pl-10 lg:py-6 my-auto lg:flex">
+            <%= f.hidden_field :post_image_cache %>
+            <%= image_tag @post.post_image_url, class: 'shadow-2xl rounded-lg lg:mr-3 lg:w-1/2 lg:h-1/2 md:h-36 object-cover object-center'%>
+            <div class='shadow-2xl rounded-lg lg:w-1/2 lg:h-1/2 md:h-36 lg:ml-3 object-cover object-center' id= 'preview' size= '100x100'></div>
+          </div>
+          <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 my-auto font-body">
+            <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+              <%= f.label :post_image, t('.post_image'), class: 'text-gray-600 h-10 pr-10 bg-white font-body' %>
+              <%= f.file_field :post_image, onChange: "imgPreView(event)", class: 'text-sm text-gray-500'%>
+              <div class="form-group inline-block mt-3">
+                <%= f.label :category_id, 'カテゴリ' %>
+                <div class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none font-body">
+                  <%= f.select :category_id, {'バック': 1, 'コースター': 2, 'モチーフ': 3, 'グラニースクエア': 4, 'お花': 5}, { include_blank: '選択してください'}, { class: 'form-control py-1' , required: true } %>
+                </div>
+              </div>
+              <div class="form-group inline-block mt-3">
+                <%= f.label :mood_id, 'イメージ' %>
+                <div class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none font-body">
+                  <%= f.select :mood_id, {'かわいい': 1, 'かっこいい': 2, '統一感': 3, 'レトロ': 4}, { include_blank: '選択してください'}, { class: 'form-control py-1' , required: true } %>
+                </div>
+              </div>
+
+              <div class="form-group inline-block mt-3">
+                <%= f.label :finished_at, "作品にかかった時間はどのくらいですか？" %>
+                <%= f.text_field :finished_at, placeholder: "(例)およそ1日", class: 'inline-flex border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none font-body' %>
+              </div>
+
+              <div class="form-group inline-block mt-3">
+                <%= f.label :body, "ひとこと(任意)" %>
+                <%= f.text_area :body, class: 'w-full bg-white rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"' %>
+              </div>
+              <div class="flex mt-3">
+                <%= f.submit class: 'flex ml-auto text-gray-700 bg-pink-200 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded' %>
+              </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </section>
 </div>
+<script>
+  function imgPreView(event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  var preview = document.getElementById("preview");
+  var previewImage = document.getElementById("previewImage");
+
+  if(previewImage != null) {
+    preview.removeChild(previewImage);
+  }
+  reader.onload = function(event) {
+    var img = document.createElement("img");
+    img.setAttribute("src", reader.result);
+    img.setAttribute("id", "previewImage");
+    preview.appendChild(img);
+  };
+
+  reader.readAsDataURL(file);
+  }
+</script>
