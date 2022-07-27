@@ -14,10 +14,17 @@
  *= require_self
  */
 .header{
-  width: auto;
   top: 0;
   left: 0;
   right: 0;
   position: fixed;
-  height: 3.5rem;
+  height: 4rem;
+}
+
+.top{
+  background-image: url("knitting1.jpg");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size:cover;
+  height: 100vh
 }

@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
   mount_uploader :post_image, PostImageUploader
   belongs_to :user
+  belongs_to :category
+  belongs_to :mood
 
-  has_many :categories, dependent: :destroy
-  has_many :moods, dependent: :destroy
   has_many :favorites
 
   scope :by_category, ->(category_id) { where(category_id: category_id) }
