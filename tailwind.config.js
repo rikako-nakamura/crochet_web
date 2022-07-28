@@ -6,7 +6,11 @@ module.exports = {
       body: [
         "Hannotate SC",
         "Comic Sans MS"
-      ]},
+      ],
+      container: {
+        center: true,
+      },
+    },
     extend: {},
   },
   variants: {
