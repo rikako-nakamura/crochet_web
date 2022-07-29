@@ -81,6 +81,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: crochet_web_production
   username: crochet_web
   password: <%= ENV['CROCHET_WEB_DATABASE_PASSWORD'] %>
