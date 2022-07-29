@@ -18,8 +18,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
@@ -31,13 +32,13 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update!(post_params)
-    redirect_to post_path(post)
+    redirect_to post_path(post), success: t('.success')
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, info: t('.info') 
   end
 
   def favorites
