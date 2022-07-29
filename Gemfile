@@ -60,3 +60,7 @@ gem 'mini_magick'
 gem 'kaminari'
 
 gem 'public_uid'
+
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
