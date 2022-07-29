@@ -7,15 +7,16 @@ class UserSessionsController < ApplicationController
 
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to root_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def destroy
     reset_session
-    redirect_to root_path
+    redirect_to root_path, info: t('.info')
   end
 
   private
