@@ -6,11 +6,11 @@
     <%= image_tag "flower2.png"%>
   </div>
 
-  <section class="text-gray-600 body-font flex justify-center">
+  <section class="text-gray-600 body-font flex justify-center text-center">
     <div class="mx-auto">
       <%= form_with model: @knitting_diagram, local: true do |f| %>
-        <div class="px-14 font-body">
-          <div class="flex p-2 w-full justify-center space-x-20">
+        <div class="font-body">
+          <div class="flex p-2 w-full justify-center space-x-16">
             <button class="w-36 h-36 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
               <%= link_to new_user_path do %>
                 会員登録はこちら
@@ -23,10 +23,10 @@
           <p class="text-green-500 lg:text-xl mb-10 w-full justify-cente">※マイページに保存する場合会員登録が必要です</p>
         </div>
 
-        <div class="flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10 justify-around mx-8">
-            <%= f.color_field :square_outer, {class: 'square_outer'} %>
-            <%= f.color_field :square_center, {class: 'square_center mt-12'} %>
-            <%= f.color_field :square_inner, {class: 'square_inner mt-24'} %>
+        <div class="flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10 justify-around">
+          <%= f.color_field :square_outer, {class: 'square_outer'} %>
+          <%= f.color_field :square_center, {class: 'square_center mt-12'} %>
+          <%= f.color_field :square_inner, {class: 'square_inner mt-24'} %>
         </div>
       <%end%>
     </div>

@@ -1,4 +1,4 @@
-<div class="container px-5 py-24 mx-auto">
+<div class="container px-5 py-24 mx-auto"> 
   <div class="flex flex-col text-center w-full mb-10 bg-yellow-100">
     <%= image_tag "flower1.png"%>
     <h1 class="text-3xl font-medium title-font mb-4 text-gray-900 font-body ">Drawing Knitting diagrams</h1>
@@ -6,11 +6,11 @@
     <%= image_tag "flower1.png"%>
   </div>
   <%= render 'shared/buttons' %>
-  <div class="flex flex-wrap">
+  <div class="container mx-auto mt-6">
     <% if @knitting_diagrams.present? %>
-      <div class= "flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10">
+      <section class="flex flex-wrap justify-around">
         <% @knitting_diagrams.each do |knitting_diagram|%>
-          <div id="knitting_diagrams-id-<%= knitting_diagram.id%>" class="flex justify-around mx-8">
+          <div id="knitting_diagrams-id-<%= knitting_diagram.id%>" class="flex flex-wrap justify-around mx-3 mb-3 object-cover">
             <div class= "square_outer1" style="background-color:<%= knitting_diagram.square_outer %>"></div>
             <div class= "square_center2 m-12" style="background-color:<%= knitting_diagram.square_center %>"></div>
             <div class= "square_inner3 m-24" style="background-color:<%= knitting_diagram.square_inner %>"></div>

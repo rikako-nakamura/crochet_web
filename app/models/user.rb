@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   generate_public_uid
 
-  validates :name, presence:true
+  validates :name, presence:true, uniqueness: true
   validates :email, presence:true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
 

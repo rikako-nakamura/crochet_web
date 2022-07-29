@@ -12,7 +12,7 @@ class KnittingDiagramsController < ApplicationController
   def create
     @knitting_diagrams = current_user.knitting_diagrams.new(knitting_diagram_params)
     @knitting_diagrams.save
-    redirect_to draws_path
+    redirect_to draws_path, success: t('.success')
   end
 
   private
