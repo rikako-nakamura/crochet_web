@@ -29,6 +29,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @moods = Mood.all
+    @categories = Category.all
   end
 
   def update
