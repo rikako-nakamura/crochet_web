@@ -64,3 +64,6 @@ gem 'public_uid'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+
+gem 'aws-sdk-s3', '~> 1'
+gem 'aws-sdk-dynamodb', '~> 1'
