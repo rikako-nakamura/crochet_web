@@ -1,9 +1,9 @@
 <div class="container px-5 py-24 mx-auto">
   <div class="flex flex-col text-center w-full mb-10 bg-yellow-100">
-      <%= image_tag "flower1.png"%>
-      <h1 class="text-3xl font-medium title-font mb-4 text-gray-900 font-body "><%= "#{current_user.name}さん、何を作りますか？" %></h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base font-body text-lg">かぎ針で編んだ作品をコレクションしましょう</p>
-      <%= image_tag "flower1.png"%>
+    <%= image_tag "flower1.png"%>
+    <h1 class="lg:text-3xl text-xl title-font mb-4 text-gray-900 font-body"><%= "#{current_user.name}さん、何を作りますか？" %></h1>
+    <p class="lg:w-2/3 mx-auto leading-relaxed text-sm font-body lg:text-lg">かぎ針で編んだ作品をコレクションしましょう!</p>
+    <%= image_tag "flower1.png"%>
   </div>
   <%= render 'shared/buttons' %>
   <div class=" mx-auto">
@@ -38,7 +38,7 @@
         </section> 
         <% end %>
       <% else %>
-        <p class="text-center text-green-500 font-body text-3xl mt-11 leading-normal"> 投稿していません。<br><%="#{current_user.name}さんの編み物をぜひみたいです🌷" %></p>
+        <p class="text-center text-green-500 font-body lg:text-3xl mt-11 leading-normal"> 投稿していません。<br><%="#{current_user.name}さんの編み物をぜひみたいです🌷" %></p>
       <% end %>
     </div>
     <%= paginate @posts %>
