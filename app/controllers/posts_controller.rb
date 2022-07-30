@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @moods = Mood.all
+    @categories = Category.all
   end
 
   def create
