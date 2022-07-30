@@ -6,7 +6,6 @@ class Post < ApplicationRecord
 
   has_many :favorites
 
-  validates :post_image, presence:true
   validates :finished_at, presence:true
 
   scope :by_category, ->(category_id) { where(category_id: category_id) }
