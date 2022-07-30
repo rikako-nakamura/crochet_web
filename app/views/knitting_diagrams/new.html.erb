@@ -7,26 +7,32 @@
   </div>
 
   <section class="text-gray-600 body-font flex justify-center text-center">
-    <div class="mx-auto">
+    <div>
       <%= form_with model: @knitting_diagram, local: true do |f| %>
-        <div class="font-body">
-          <div class="flex p-2 w-full justify-center space-x-16">
-            <button class="w-36 h-36 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
-              <%= link_to new_user_path do %>
-                会員登録はこちら
-              <% end %>
-            </button>
-            <button type= "submit">
-              <%= f.submit (t '.submit'), class: 'w-36 h-36 bg-yellow-300 p-2 rounded-full hover:bg-yellow-400 text-white font-semibold' %>
-            </button>
+        <div class="lg:w-full flex flex-wrap font-body">
+          <div class="flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10 justify-around lg:pl-10 lg:py-6 my-auto">
+            <%= f.color_field :square_outer, {class: 'square_outer'} %>
+            <%= f.color_field :square_center, {class: 'square_center mt-12'} %>
+            <%= f.color_field :square_inner, {class: 'square_inner mt-24'} %>
           </div>
-          <p class="text-green-500 lg:text-xl mb-10 w-full justify-cente">※マイページに保存する場合会員登録が必要です</p>
-        </div>
-
-        <div class="flex flex-shrink-0 rounded-lg object-cover object-center mb-4 mt-10 justify-around">
-          <%= f.color_field :square_outer, {class: 'square_outer'} %>
-          <%= f.color_field :square_center, {class: 'square_center mt-12'} %>
-          <%= f.color_field :square_inner, {class: 'square_inner mt-24'} %>
+					<% if current_user %>
+            <div class="flex p-2 justify-center lg:pl-10 mx-auto my-auto">
+              <button type= "submit">
+                <%= f.submit (t '.submit'), class: 'w-36 h-36 bg-yellow-300 p-2 rounded-full hover:bg-yellow-400 text-white font-semibold' %>
+              </button>
+            </div>
+          <% else %>
+            <div class="p-2 justify-center lg:pl-10 mx-auto my-auto">
+              <div class="p-2 justify-center space-x-16">
+                <button class="w-36 h-36 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
+                  <%= link_to new_user_path do %>
+                    会員登録はこちら
+                  <% end %>
+                </button>
+              </div>
+              <p class="text-green-500 lg:text-xl mb-10 mt-3 justify-cente">※マイページに保存する場合会員登録が必要です。</p>
+            </div>
+          <% end %>
         </div>
       <%end%>
     </div>
