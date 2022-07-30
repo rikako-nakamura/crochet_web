@@ -19,7 +19,7 @@
           <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 my-auto font-body">
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <%= f.label :post_image, t('.post_image'), class: 'text-gray-600 h-10 pr-10 bg-white font-body' %>
-              <%= f.file_field :post_image, onChange: "imgPreView(event)", class: 'text-sm text-gray-500'%>
+              <%= f.file_field :post_image, onChange: "imgPreView(event)", class: 'text-sm text-gray-500', required: true %>
               <div class="form-group inline-block mt-3">
                 <%= f.label :category_id, 'カテゴリ' %>
                 <div class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none font-body">
