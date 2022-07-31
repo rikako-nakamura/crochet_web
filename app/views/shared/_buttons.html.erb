@@ -1,17 +1,17 @@
 <div class="flex p-2 w-full justify-center lg:space-x-20 font-body">
-  <button class="w-32 h-32 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
-    <%= link_to ("/posts/new") do %>
+  <%= link_to ("/posts/new") do %>
+    <button class="w-32 h-32 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
       投稿する
-    <% end %>
-  </button>
-  <button class="w-32 h-32 bg-yellow-300 p-2 rounded-full hover:bg-yellow-400 text-white font-semibold">
-    <%= link_to ("/draw") do %>
+    </button>
+  <% end %>
+  <%= link_to ("/draw") do %>
+    <button class="w-32 h-32 bg-yellow-300 p-2 rounded-full hover:bg-yellow-400 text-white font-semibold">
       色を塗る
-    <% end %>
-  </button>
-  <button class="w-32 h-32 bg-green-300 p-2 rounded-full hover:bg-green-400 text-white font-semibold">
-    <%= link_to ("/posts") do %>
+    </button>
+  <% end %>
+  <%= link_to ("/posts") do %>
+    <button class="w-32 h-32 bg-green-300 p-2 rounded-full hover:bg-green-400 text-white font-semibold">
       投稿を見る
-    <% end %>
-  </button>
+    </button>
+  <% end %>
 </div>

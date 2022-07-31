@@ -42,17 +42,17 @@
             <h2 class="text-gray-900 text-lg title-font font-medium mb-2 font-body">Post your work</h2>
             <p class="leading-relaxed text-base font-body">かぎ針で作ったものを投稿することや<br>後で見ることもできます。<br>みなさんのアイデアのお手伝いを<br>投稿を通じてしませんか？</p>
               <div class="wrap flex justify-center ">
-                <button class="mr-3 mt-3 text-green-500 inline-flex items-center font-body">
-                  <%= link_to ("/posts") do %>
+                <%= link_to ("/posts") do %>
+                  <button class="mr-3 mt-3 text-green-500 inline-flex items-center font-body">
                     投稿一覧へ
-                  <% end %>
-                </button>
+                  </button>
+                <% end %>
                 <p class="font-body mt-3 text-green-500 mr-3">or</p>
-                <button class="mt-3 text-green-500 inline-flex items-center font-body">
-                  <%= link_to ("/posts/new") do %>
+                <%= link_to ("/posts/new") do %>
+                  <button class="mt-3 text-green-500 inline-flex items-center font-body">
                     投稿する！
-                  <% end %>
-                </button>
+                  </button>
+                <% end %>
               </div>
           </div>
         </div>
@@ -68,11 +68,11 @@
           <p class="leading-relaxed font-body lg:mt-10">
             持っている毛糸で色の組み合わせに迷っていませんか？<br>編み図に似せて色を塗って想像できるようにしました🌼
           </p>
-          <button class=" bg-pink-300 hover:bg-pink-500 text-white font-body font-bold py-2 px-4 mx-28 rounded w-2/6 h-16 justify-center items-center lg:mt-10">
-            <%= link_to ("/draw") do %>
+          <%= link_to ("/draw") do %>
+            <button class=" bg-pink-300 hover:bg-pink-500 text-white font-body font-bold py-2 px-4 mx-28 rounded w-2/6 h-16 justify-center items-center lg:mt-10">
               色を塗ってみる
-            <% end %>
-          </button>
+            </button>
+          <% end %>
         </div>
       </div>
     </div>
