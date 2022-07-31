@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :login_required, only: %i[new create edit]
-  before_action :set_s3_direct_post, only: %i[new edit create update]
 
   def index
     @posts = Post.all
@@ -51,10 +50,6 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def set_s3_direct_post
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
-  end
 
   def search_params
     params[:q]&.permit(:category_id, :mood_id)

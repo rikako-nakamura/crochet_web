@@ -65,5 +65,6 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
 
-gem 'aws-sdk-s3', '~> 1'
-gem 'aws-sdk-dynamodb', '~> 1'
+gem 'fog-aws'
+gem "aws-sdk-s3", require: false 
+gem 'dotenv-rails'
