@@ -6,7 +6,7 @@
     <%= image_tag "flower1.png"%>
   </div>
   <%= render 'shared/buttons' %>
-  <div class=" mx-auto">
+  <div class="mx-auto">
     <p class="text-center text-green-500 lg:text-3xl text-xl mt-11 font-body"><%= "🌼#{current_user.name}さんが投稿した作品一覧🌼" %></p>
     <div class="flex justify-center flex-wrap">
       <% if @posts.present? %>

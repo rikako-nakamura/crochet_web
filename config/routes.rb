@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/draw', to: 'knitting_diagrams#new'
   post '/draw', to: 'knitting_diagrams#create'
   get '/draws', to: 'knitting_diagrams#index'
+  get '/privacy', to: 'top#privacy'
+  get '/service', to: 'top#service'
   root 'top#index'
   resources :posts do
     collection do
