@@ -11,7 +11,7 @@
       <% if @favorite_posts.present? %>
         <%= render @favorite_posts %>
       <% else %>
-        <div class= "text-center text-green-500 font-body lg:text-3xl mt-11 leading-normal"><%= t('.no_result') %><br><%= link_to "投稿一覧", posts_path, class: "bg-yellow-100 shadow-lg px-4 py-1 mt-11"%>でお気に入りの作品を見つけてみませんか🌷</div>
+        <div class= "text-center text-green-500 font-body lg:text-3xl mt-11 leading-normal"><%= t('.no_result') %><br><%= link_to "投稿一覧", posts_path, class: "bg-yellow-100 shadow-lg px-4 mt-11"%>でお気に入りの作品を見つけてみませんか🌷</div>
       <% end %>
     </div>
     <%= paginate @favorite_posts %>

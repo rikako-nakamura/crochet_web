@@ -64,3 +64,7 @@ gem 'public_uid'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+
+gem 'fog-aws'
+gem "aws-sdk-s3", require: false 
+gem 'dotenv-rails'
