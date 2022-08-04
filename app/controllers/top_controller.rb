@@ -3,6 +3,8 @@ class TopController < ApplicationController
 
   def index;end
 
-  def show;end
+  def service;end
+
+  def privacy;end
 
 end

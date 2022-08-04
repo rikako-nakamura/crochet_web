@@ -1,0 +1,15 @@
+<footer class="text-gray-600 font-body container px-5 py-24 mx-auto">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <%= link_to root_path, class: 'flex' do %>
+      <%= image_tag src='logo.png', class: 'mr-3 sm:h-9 h-6'%>
+      <span class="text-xl text-green-900 whitespace-nowrap font-body">FOR CROCHET</span>
+    <%end%>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 color imagine FOR CROCHET  —
+      @rikako
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <%= link_to "利用規約", service_path, class: 'text-gray-500'%>
+      <%= link_to "プライバシーポリシー", privacy_path, class: 'ml-3 text-gray-500' %>
+    </span>
+  </div>
+</footer>

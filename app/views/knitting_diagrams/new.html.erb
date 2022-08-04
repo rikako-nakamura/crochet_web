@@ -24,11 +24,11 @@
           <% else %>
             <div class="p-2 justify-center lg:pl-10 mx-auto my-auto">
               <div class="p-2 justify-center space-x-16">
-                <button class="w-36 h-36 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
-                  <%= link_to new_user_path do %>
+                <%= link_to new_user_path do %>
+                  <button class="w-36 h-36 bg-red-300 p-2 rounded-full hover:bg-red-400 text-white font-semibold">
                     会員登録はこちら
-                  <% end %>
-                </button>
+                  </button>
+                <% end %>
               </div>
               <p class="text-green-500 lg:text-xl mb-10 mt-3 justify-cente">※マイページに保存する場合会員登録が必要です。</p>
             </div>
