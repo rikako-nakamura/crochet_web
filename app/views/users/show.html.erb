@@ -41,6 +41,6 @@
         <p class="text-center text-green-500 font-body lg:text-3xl mt-11 leading-normal"> 投稿していません。<br><%="#{current_user.name}さんの編み物をぜひみたいです🌷" %></p>
       <% end %>
     </div>
-    <%= paginate @posts %>
+    <%= paginate @posts, window: 2 %>
   </div>
 </div>
