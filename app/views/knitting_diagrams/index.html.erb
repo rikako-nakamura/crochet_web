@@ -23,6 +23,6 @@
         <button class=" text-green-500 font-body rounded px-4 py-2 mt-11 shadow-2xl w-full lg:text-2xl"><%= link_to "塗りにいく>>", draw_path %></button>
       </div>
     <% end %>
-    <%= paginate @knitting_diagrams %>
+    <%= paginate @knitting_diagrams, window: 2 %>
   </div>
 </div>
