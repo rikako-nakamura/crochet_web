@@ -11,7 +11,7 @@
 							<div class="text-lg font-medium text-gray-900 mb-3 mr-3 font-body" id="post-id-<%= post.id %>">
 								<%= "#{post.user.name}さんの作品"%>
 							</div>
-							<span class="text-gray-400 mr-3 inline-flex lg:ml-auto md:ml-0 ml-auto leading-none text-sm">
+							<span class="rounded-lg bg-green-500 px-4 py-2 mr-3 inline-flex lg:ml-auto md:ml-0 ml-auto leading-none text-sm">
 									<% if current_user %>
 										<%= render 'favorite_button', post: post %>
 									<% else %>
