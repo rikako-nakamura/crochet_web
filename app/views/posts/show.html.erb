@@ -40,6 +40,15 @@
             かかった時間：<%= @post.finished_at %>
           </div>
 
+          <div class="text-gray-600 lg:w-1/2 md:w-full mt-6 py-2">
+            <% if @post.youtube_url.present? %>
+              参考にしたYoutube：<br>
+              <%= render 'shared/embed_youtube' %>
+            <% else %>
+              参考にしたYoutubeはありません
+            <% end %>
+          </div>
+
           <div class="text-left md:w-full font-body h-48 text-base outline-none text-gray-700 py-1 mt-6 resize-none leading-6 transition-colors duration-200 ease-in-out">
             <% if @post.body.present?%>
               ひとこと：<br><%= @post.body %>
